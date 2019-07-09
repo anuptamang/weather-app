@@ -2,14 +2,12 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('.form-control')
 const weatherDetails = document.querySelector('.weather-details')
 
-const hostname = location.origin;
-
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const location = search.value
 
-    fetch(`${hostname}/weather?address=${location}`).then((response) => {
+    fetch(`/weather?address=${location}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 weatherDetails.innerHTML = data.error
