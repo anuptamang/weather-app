@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-</body>
-<html lang="en" class="bg-info">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,17 +8,23 @@
     <title>NodeJS app</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-info">
+<body>
     {{>header}}
     <main class="bg-white">
         <div class="container py-5 text-center">
-            <h1>{{ title }}</h1>
-            <p>Created by: {{ name }}</p>
+            <h2 class="mb-4">{{ title }}</h2>
+            <form class="form-inline justify-content-center weatherForm mb-4" action="#">
+                <input type="text" class="form-control" placeholder="location">
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+            <div class="weather-details bg-success text-white d-none"></div>
         </div>
     </main>
     {{>footer}}
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
